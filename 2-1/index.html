@@ -9,7 +9,7 @@
     <meta name="description" content="The HTML test">
     <meta name="author" content="SitePoint">
     <link rel="stylesheet" href="css/index.css">
-    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Bhai" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
@@ -18,28 +18,42 @@
 <body>
     <header>
         <span id="appname">MY TO DO LIST</span>
-        <input placeholder="Type a remind...." type="text" />
-        <button>Add</button>
+        <input id="input" placeholder="Type a remind...." type="text" />
+        <button id="add">Add</button>
     </header>
 
     <div id="list">
-        <li class="done">Buy eggs
+        <li class="done">
+            <span>Buy eggs</span>
             <button class="remove">&#x2715;</button>
         </li>
 
-        <li>Read a book
+        <li>
+            <span>Read a book</span>
             <button class="remove">&#x2715;</button>
         </li>
 
-        <li>Organize office
+        <li>
+            <span>Organize office</span>
             <button class="remove">&#x2715;</button>
         </li>
 
-        <li>UET Code Camp 2018
+        <li>
+            <span>UET Code Camp 2018</span>
             <button class="remove">&#x2715;</button>
         </li>
+        <div id="empty">
+            <br/>
+            <img src="img/empty.png"/>
+           <span>This list is empty!</span> 
+        </div>
     </div>
 
+    <div id="alert">
+        Your alert
+    </div>
+
+    <script src="js/index.js"></script>
 </body>
 
 </html>

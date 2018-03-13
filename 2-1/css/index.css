@@ -1,7 +1,8 @@
 *{
     margin:0;
     padding:0;
-    font-family: 'Pacifico', cursive;
+    outline:none;
+    font-family: 'Baloo Bhai', cursive;
 }
 header{
     background:linear-gradient(to right,#cc2b5e, #753a88);
@@ -28,10 +29,9 @@ header input{
     width:80%;
 }
 header button{
-    margin-left: -4px;
     width: 19%;
     text-align: center;
-    transition: 0.25s;
+    transition: background-color 0.25s;
 }
 header button:hover{
     background:#02aab0;
@@ -77,4 +77,61 @@ header button:hover{
 #list li .remove:hover{
     background:rgb(231, 85, 85);
     color:#fff;
+}
+#alert{
+    padding:6px;
+    background:rgb(241, 91, 91);
+    color:#fff;
+    text-align: center;
+    position: fixed;
+    bottom:-100px;
+    right:0;
+    left:0;
+    transition: 0.5s;
+}
+@media only screen and (min-width: 768px) {
+    body{
+        background:#f2f2f2;
+    }
+    header{
+        position: fixed;
+        top:35px;
+        left:35px;
+        width:350px;
+        box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+        border-radius:2px;
+        overflow: hidden;
+    }
+    header input{
+        width:100%;
+    }
+    header button{
+        margin-top:6px;
+        width:100%;
+    }
+    #list{
+        background:#fff;
+        position: fixed;
+        top:35px;
+        bottom:35px;
+        left:450px;
+        right:35px;
+        padding:0px;
+        border-radius:2px;
+        overflow: hidden;
+        box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    }
+}
+#empty{
+    display:none;
+    color:#aaa;
+    text-align: center;
+}
+#empty img{
+    width:250px
+}
+#empty span{
+    font-size:30px;
+    display:block;
+    pointer-events: none;
 }
