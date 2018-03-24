@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
+import List from './components/list.js';
+import Header from './components/input-header.js';
 
 var jsonData = [];
 const datasample = [
@@ -21,37 +23,8 @@ const datasample = [
   }
 ]
 
-class Header extends Component {
-  render() {
-    return (
-      <header>
-        <span id="appname">MY TO DO LIST</span>
-        <input id="input" placeholder="Type a remind...." type="text" /><button id="add">Add</button>
-      </header>
-    )
-  }
-}
-
-class List extends Component {
-  render() {
-    var data = this.props.data.map((dataitem) => {
-    return <li className={dataitem.status==0?"none":"done"}><span>{dataitem.title}</span><button className="remove">&#x2715;</button></li>;
-    })
-    var dataa=1;
-    return (
-      <div id="list">
-        {data}
-        <div id="empty">
-          <br />
-          <img alt="empty icon" src="img/empty.png" />
-          <span>This list is empty!</span>
-        </div>
-      </div>
-    )
-  }
-}
-
 class App extends Component {
+
   constructor(props) {
     super(props);
     if (localStorage.datatodo == null) {
@@ -62,12 +35,30 @@ class App extends Component {
       data: jsonData
     }
   }
-
+  addNew = (text) => {
+    this.state.data.push({ title: text, status: 0 });
+    this.setState({ data: this.state.data });
+    localStorage.datatodo = JSON.stringify(this.state.data);
+  }
+  removeItem = (id) => {
+    this.state.data.splice(id, 1);
+    this.setState({ data: this.state.data });
+    localStorage.datatodo = JSON.stringify(this.state.data);
+  }
+  doneItem = (id) => {
+    if (this.state.data[id].status == 1) {
+      this.state.data[id].status = 0;
+    } else {
+      this.state.data[id].status = 1
+    }
+    this.setState({ data: this.state.data });
+    localStorage.datatodo = JSON.stringify(this.state.data);
+  }
   render() {
     return (
       <div className="App">
-        <Header />
-        <List data={this.state.data} />
+        <Header addNew={this.addNew} />
+        <List data={this.state.data} removeItem={this.removeItem} doneItem={this.doneItem} />
         <div id="alert">
           Your alert
         </div>
@@ -75,6 +66,7 @@ class App extends Component {
       </div>
     );
   }
+
 }
 
 export default App;
