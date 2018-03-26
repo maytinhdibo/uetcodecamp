@@ -40,7 +40,7 @@ class App extends Component {
   }
   addNew = (text) => {
     this.state.data.push({ title: text, status: 0 });
-    this.setState({ data: this.state.data });
+    this.setState({ data: this.state.data, text: "" });
     localStorage.datatodo = JSON.stringify(this.state.data);
   }
   removeItem = (id) => {
@@ -63,10 +63,10 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-      <header>
-      <span id="appname">MY TO DO LIST</span>
-      </header>
-        <Header addNew={this.addNew} />
+        <header>
+          <span id="appname">MY TO DO LIST</span>
+        </header>
+        <Header addNew={this.addNew} text={this.state.text}/>
         <List data={this.state.data} removeItem={this.removeItem} doneItem={this.doneItem} />
         <div id="alert">
           {this.state.alert}

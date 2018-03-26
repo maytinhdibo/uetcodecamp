@@ -5,8 +5,10 @@ class Header extends Component {
     if (document.querySelector("#input").value.length < 1) {
       alertText("Your text is empty!");
     } else {
-      this.props.addNew(document.querySelector("#input").value);
-      document.querySelector("#input").value = "";
+      this.props.addNew(this.state.value);
+      this.setState({
+        value: ""
+      });
       alertText("New reminder has been added!");
     }
   }
@@ -17,11 +19,25 @@ class Header extends Component {
       return false;
     }
   }
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: ""
+    }
+  }
+  componentDidMount() {
+    this.setState({ value: this.props.text });
+  }
+  _onChange = (e) => {
+    this.setState({
+      value: e.target.value
+    });
+  }
   render() {
     return (
       <div id="header">
         <span>Add new work</span>
-        <input id="input" onKeyPress={this.enterKey} placeholder="Type a remind...." type="text" /><button onClick={this.addNew} id="add">Add</button>
+        <input id="input" onChange={this._onChange} onKeyPress={this.enterKey} value={this.state.value} placeholder="Type a remind...." type="text" /><button onClick={this.addNew} id="add">Add</button>
       </div>
     )
   }

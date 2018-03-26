@@ -78,7 +78,9 @@ header #appname {
 }
 
 /* list remind */
-
+#list{
+  overflow-y:auto;
+}
 #list li {
   position: relative;
   list-style-type: none;
@@ -98,7 +100,7 @@ header #appname {
   background: #9575CD;
   color: #fff;
   box-shadow: 0 12px 19px rgba(0, 0, 0, 0.3), 0 0px 9px rgba(0, 0, 0, 0.2);
-  transform: scale(1.05);
+  transform: scale(1.02);
 }
 
 #list li:hover .remove {
@@ -177,7 +179,7 @@ header #appname {
   }
   #list {
     z-index: 1;
-    overflow: visible;
+    overflow: auto;
     width: auto;
     background: #fff;
     position: fixed;
