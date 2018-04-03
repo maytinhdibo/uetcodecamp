@@ -144,6 +144,7 @@ header #appname {
   width:100%;
 }
 #alert {
+  z-index: 1000;
   padding: 8px 0;
   background: rgb(241, 91, 91);
   color: #fff;
