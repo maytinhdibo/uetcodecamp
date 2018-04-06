@@ -3,7 +3,7 @@ import {alertText} from './../dom.js';
 class Header extends Component {
   addNew = () => {
     if (document.querySelector("#input").value.length < 1) {
-      alertText("Your text is empty!");
+      alertText("Your text is empty!",true);
     } else {
       this.props.addNew(this.state.value);
       this.setState({

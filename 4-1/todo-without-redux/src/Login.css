@@ -63,3 +63,15 @@
   #alert{
       width:100%;
   }
+  .back{
+    position: absolute;
+    font-size:28px;
+    padding:0px 10px 5px 10px;
+    background: rgba(80, 79, 79, 0.1);
+    border-radius: 4px;
+    transition: 0.25s;
+    cursor: pointer;
+  }
+  .back:hover{
+    background: rgba(80, 79, 79, 0.2);
+  }

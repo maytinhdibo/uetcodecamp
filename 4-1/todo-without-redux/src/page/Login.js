@@ -16,7 +16,7 @@ class Login extends Component {
         }).then(object => {
             console.log(object);
             if(object.success){
-                localStorage.name=object.data.user;
+               localStorage.name=object.data.user;
                 this.setState(
                     {
                         auth: true

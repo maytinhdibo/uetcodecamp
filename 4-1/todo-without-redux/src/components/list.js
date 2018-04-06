@@ -24,7 +24,7 @@ class List extends Component {
         this.props.doneItem(item);
     }
     render() {
-        const empty = <div id="empty"><br /><img alt="empty icon" src="img/empty.png" /><span>This list is empty!</span></div>;
+        const empty = <div id="empty"><br /><img alt="empty icon" src="/img/empty.png" /><span>This list is empty!</span></div>;
         var data = this.props.data.map((dataitem, index) => {
             return <ListItem removeItem={this.removeItem} doneItem={this.doneItem} status={dataitem.completed} title={dataitem.title} id={dataitem._id} />
         })

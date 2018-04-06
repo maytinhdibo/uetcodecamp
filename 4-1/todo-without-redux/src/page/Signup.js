@@ -42,6 +42,7 @@ class Signup extends Component {
             return (
                 <div className="login-page">
                     <div id="login-form">
+                   <Link to="/"><div class="back">&lsaquo;</div>	</Link>
                         <img src="img/logo.png" />
                         <input id="name" placeholder="@yourname" />
                         <input id="email" placeholder="@youremail" />

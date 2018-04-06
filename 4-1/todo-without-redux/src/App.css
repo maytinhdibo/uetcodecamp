@@ -235,7 +235,7 @@ header #appname {
   width:200px;
   background:#fff;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-  height:80px;
+  height:120px;
 }
 #account .name,#account .logout{
   display:block;
@@ -256,3 +256,51 @@ display:block;
 #account:hover .icon{
   display:none;
   }
+.popup{
+  position: fixed;
+  z-index: 999;
+  top:0;
+  bottom:0;
+  right:0;
+  left:0;
+  background: #00000036;
+}
+.popup-content{
+  position: absolute;
+  width:90%;
+  max-width: 380px;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  background:#fff;
+  padding:16px;
+  padding-bottom:46px;
+  border-radius: 3px;
+  color:#345;
+  overflow: hidden;
+}
+.popup-content a{
+  color:#345;
+}
+.popup-content li, .popup-content h2{
+  line-height: 200%;
+}
+.popup-content .button{
+  box-sizing: border-box;
+  font-size:14px;
+  border:none;
+  background:#efefef;
+  display:block;
+  bottom:0;
+  right:0;
+  left:0;
+  text-align: center;
+  padding:9px;
+  cursor: pointer;
+  position: absolute;
+  transition: 0.25s;
+}
+.popup-content .button:hover{
+  background:rgb(228, 118, 118);
+  color:#eee;
+}
